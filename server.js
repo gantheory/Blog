@@ -11,8 +11,6 @@ app.set('port', (process.env.PORT || 3001));
 
 app.use(bodyParser.json());
 
-//let data = [];
-
 app.use(express.static(`${__dirname}/client/build/`));
 
 function sendHomepage(req, res) {
@@ -20,7 +18,6 @@ function sendHomepage(req, res) {
 }
 
 function getPosts(req, res) {
-  //res.json(data);
   let posts = [];
   mongo.connect(url, (err, db) => {
     assert.equal(null, err);
@@ -36,7 +33,6 @@ function getPosts(req, res) {
 }
 
 function getOnePost(req, res) {
-  //res.json(data[req.params.id]);
   let posts = [];
   mongo.connect(url, (err, db) => {
     assert.equal(null, err);
@@ -62,7 +58,6 @@ function postPost(req, res) {
       db.close();
     });
   });
-  //data.push(newPost);
 }
 
 app.get('/', sendHomepage);

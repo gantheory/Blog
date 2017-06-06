@@ -1,6 +1,20 @@
 import React, { Component } from 'react';
 import ReactHtmlParser from 'react-html-parser';
+import RaisedButton from 'material-ui/RaisedButton';
+import { Link } from 'react-router-dom';
 import '../css/SinglePost.css';
+
+const styles = {
+  textField: {
+    height: 30,
+    width: 200,
+    fontSize: 20,
+  },
+  raisedButton: {
+    height: 25,
+    width: 100,
+  }
+}
 
 class SinglePost extends Component {
   constructor() {
@@ -28,7 +42,18 @@ class SinglePost extends Component {
     return (
       <div className="singlePost">
         <h1 className="singlePostTitle">{this.state.post.postTitle}</h1>
-        {ReactHtmlParser(html)}
+        <div className="postContent">
+          {ReactHtmlParser(html)}
+        </div>
+        <Link to={`/`}>
+          <div className="homeButton">
+            <RaisedButton
+              label="Home"
+              secondary={true}
+              style={styles.raisedButton}
+            />
+          </div>
+        </Link>
       </div>
     );
   }

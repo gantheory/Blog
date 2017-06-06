@@ -6,7 +6,7 @@ import '../css/Post.css';
 import Radium from 'radium';
 
 var RadiumLink = Radium(Link);
-var style = {
+var RadiumStyle = {
   base: {
     color: '#fff',
     ':hover': {
@@ -24,7 +24,7 @@ class Post extends Component {
         <div className="post">
           <RadiumLink
             style={[
-              style.base,
+              RadiumStyle.base,
             ]}
             to={`/posts/${this.props.post.id}`}
           >

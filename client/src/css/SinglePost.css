@@ -1,3 +1,12 @@
 .singlePost {
   text-align: center;
 }
+
+.postContent {
+  width: 75%;
+  margin-left: 12.5%;
+  margin-right: 12.5%;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  background-color: rgba( 100, 100, 100, 0.5);
+}
